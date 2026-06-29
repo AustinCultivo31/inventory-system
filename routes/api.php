@@ -1,7 +1,12 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ProductApiController;
 
-Route::apiResource('products', ProductApiController::class);
+Route::apiResource('products', ProductApiController::class)->names([
+    'index'   => 'api.products.index',
+    'store'   => 'api.products.store',
+    'show'    => 'api.products.show',
+    'update'  => 'api.products.update',
+    'destroy' => 'api.products.destroy',
+]);
